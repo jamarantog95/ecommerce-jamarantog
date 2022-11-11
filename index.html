@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/img/favicon.png" />
+
+    <!------------------------------- IMPORTAMOS ICONOS ------------------------------->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-------------------------- IMPORTAMOS HOJA DE ESTILOS --------------------------->
+    <link rel="stylesheet" href="src/styles.css">
+
+    <title>Ecommerce Juan Amaranto</title>
+</head>
+
+<body>
+
+    <!--==================== LOADER ====================-->
+    <div class="load" id="load">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="load__gif">
+            <title>Academlo Logo</title>
+            <g>
+                <g>
+                    <path
+                        d="M24.45,56.48,0,42.36V14.12L24.46,0,48.92,14.12V42.36ZM1.89,41.26l22.56,13L47,41.26v-26l-22.56-13-22.56,13Z">
+                    </path>
+                    <path
+                        d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+                    </path>
+                </g>
+            </g>
+        </svg>
+
+    </div>
+
+
+    <!--==================== SECTION MENU ====================-->
+    <nav class="navbar_menu scroll-menu" id="navbar_scroll">
+        <div class="navbar_options ">
+
+            <a href="#" class="nav__logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="nav__logo-icon">
+                    <title>Academlo Logo</title>
+                    <g>
+                        <g>
+                            <path
+                                d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+                            </path>
+                        </g>
+                    </g>
+                </svg> Store
+            </a>
+
+            <div class="menu_options" id="nav-menu">
+
+                <ul class="menu">
+                    <li class="menu_op"><a class="menu_link active_link" href="#home">Home</a></li>
+                    <li class="menu_op"><a class="menu_link" href="#products">Products</a></li>
+                </ul>
+                <div class="nav_close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="navbar_icons">
+            <i class='bx bx-moon icon_btn' id="theme-button"></i>
+            <div class="nav_shop" id="cart-shop">
+                <i class="bx bx-shopping-bag icon_btn">
+                    <span id="cart-count" class="countProd">0</span>
+                </i>
+            </div>
+            <div class="nav_toggle" id="nav-toggle">
+                <i class="bx bx-grid-alt icon_btn"></i>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--==================== CART ====================-->
+    <div class="cart" id="cart">
+        <i class='bx bx-x cart__close' id="cart-close"></i>
+        <h2 class="cart__title-center">My Cart</h2>
+
+        <div class="cart__container">
+
+            <!-- <div class="cart__empty">
+                <img src="src/img/empty-cart.png" alt="empty cart">
+                <h2>Your cart is empty</h2>
+                <p>You can add items to your cart by clicking on the "<i class="bx bx-plus"></i>" button on the product
+                    page.</p>
+            </div> -->
+
+            <div class="contentCartShop__items"></div>
+            <div class="contentCartShop__total"></div>
+
+            <!-- <article class="cart__card">
+                <div class="cart__box">
+                    <img src="src/img/featured3.png" alt="Sweatshirts" class="cart__img">
+                </div>
+
+                <div class="cart__details">
+                    <h3 class="cart__title">Sweatshirts</h3>
+                    <span class="cart__stock">Stock: 19 | <span class="cart__price">$24.00</span></span>
+                    <span class="cart__subtotal">
+                        Subtotal: $48.00
+                    </span>
+
+                    <div class="cart__amount">
+                        <div class="cart__amount-content">
+                            <span class="cart__amount-box minus" data-id="3">
+                                <i class="bx bx-minus"></i>
+                            </span>
+
+                            <span class="cart__amount-number">2 units</span>
+
+                            <span class="cart__amount-box plus" data-id="3">
+                                <i class="bx bx-plus"></i>
+                            </span>
+                        </div>
+
+                        <i class="bx bx-trash-alt cart__amount-trash" data-id="3"></i>
+                    </div>
+                </div>
+            </article> -->
+
+        </div>
+
+        <!-- <div class="cart__prices">
+            <span class="cart__prices-item"><span id="items-count"></span> items</span>
+            <span class="cart__prices-total" id="cart-total"></span>
+        </div>
+
+        <div class="cart__checkout">
+            <button class="button cart__btn" id="cart-checkout" disabled><i class='bx bxs-check-shield'></i>
+                Checkout</button>
+        </div> -->
+
+    </div>
+
+    <main>
+        <!--==================== SECTION HOME ====================-->
+        <section class="home" id="home">
+            <div class="container_home">
+
+                <div class="home_bg">
+                    <img src="src/img/home.png" alt="" class="home_img">
+                </div>
+                <div class="home_details">
+                    <h1 class="home_title">New Sweatshirt <br> COLLECTIONS 2022</h1>
+                    <p class="home_dsc">
+                        Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series,
+                        with a modern
+                        design.
+                    </p>
+                    <span class="home_price">$14.00</span>
+
+                    <div class="home_buttons">
+                        <a href="#" class="button btn_gray">
+                            Discover
+                        </a>
+
+                        <button class="button">ADD TO CART</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--==================== SECTION PRODUCTS ====================-->
+        <section class="products" id="products">
+            <div class="container_products">
+
+                <ul class="products_filter">
+                    <li class="item_filter prod_line">
+                        <h3>Show All</h3>
+                        <span class="amount">show all products</span>
+                    </li>
+                    <li class="item_filter prod_line active_prod">
+                        <h3>Hoddies</h3>
+                        <span class="amount">3 products</span>
+                    </li>
+                    <li class="item_filter prod_line">
+                        <h3>Shirts</h3>
+                        <span class="amount">4 products</span>
+                    </li>
+                    <li class="item_filter ">
+                        <h3>Sweatshirts</h3>
+                        <span class="amount">4 products</span>
+                    </li>
+                </ul>
+                <div class="products_content" id="products__content">
+
+                    <!-- <article class="product_card">
+                        <div class="products_shape">
+                            <img src="src/img/featured1.png" alt="" class="prod_img">
+                        </div>
+                        <div class="products_data">
+                            <h2 class="prod_price">$14.00
+                                <span class="prod_quantity">| Stock: 0</span>
+                            </h2>
+                            <h3 class="prod_name">Hoodies</h3>
+                            <button class="button prod_btn" data-id="1">
+                                <i class="bx bx-plus"></i>
+                            </button>
+                        </div>
+                    </article> -->
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer_container">
+
+            <div class="footer_menu">
+
+                <h3 class="footer_title">Our information</h3>
+                <ul class="footer_list">
+                    <li>Toluca - México</li>
+                </ul>
+
+            </div>
+            <div class="footer_menu">
+                <h3 class="footer_title">About Us</h3>
+
+                <ul class="footer_links">
+                    <li>
+                        <a href="#" class="footer_link">Support Center</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer_link">Customer Support</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer_link">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer_link">Copy Right</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_menu">
+                <h3 class="footer_title">Product</h3>
+
+                <ul class="footer_links">
+                    <li>
+                        <a href="#" class="footer_link">Hoodies</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer_link">Shirts</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer_link">Sweatshirts</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_menu">
+                <h3 class="footer_title">Social</h3>
+
+                <ul class="footer_social">
+                    <a href="https://www.facebook.com/" target="_blank" class="item_socialnet">
+                        <i class='bx bxl-facebook'></i>
+                    </a>
+
+                    <a href="https://twitter.com/" target="_blank" class="item_socialnet">
+                        <i class='bx bxl-twitter'></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/" target="_blank" class="item_socialnet">
+                        <i class='bx bxl-instagram'></i>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <span class="footer_copy">&#169; Diseñado por JUAN AMARANTO - ACADEMLO. All rigths reserved</span>
+
+    </footer>
+    <script src="src/maindata.js"></script>
+
+    <script src="src/main.js" type="module"></script>
+
+</body>
+
+</html>
